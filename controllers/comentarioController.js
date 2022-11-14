@@ -3,7 +3,7 @@ const comentario= require("../models/comentario");
 const createComentario =(req,res)=>{
     const {autor,fecha,descripcion}=req.body;
 
-    const newActa= new comentario({
+    const newComentario= new comentario({
         
         autor,
         fecha,
