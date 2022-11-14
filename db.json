@@ -1,0 +1,28 @@
+{
+    "vecino":{
+        "nombre":{
+            "type":"String",
+            "required":true
+        },
+        "apellido":{
+            "type":"String",
+            "required":true
+        },
+        "fechaNacimiento":{
+            "type":"Date",
+            "required":false
+        },
+        "direccion":{
+            "type":"String",
+            "required":false
+        },
+        "telefono":{
+            "type":"Number",
+            "required":false
+        },
+        "correo":{
+            "type":"String",
+            "required":false
+        }
+    }
+}
