@@ -24,5 +24,29 @@
             "type":"String",
             "required":false
         }
+    },
+    
+"acta":{
+    "tema":{
+        "type":"String",
+        "required":true
+
+    },
+    "descripcion":{
+        "type":"String",
+        "required":true
+    },
+    "fecha":{
+        "type":"Date",
+        "required":true
+    },
+    "hora_inicio":{
+        "type": "Date",
+        "required":true
+    },
+    "hora_termino":{
+        "type":"Date",
+        "required":true
     }
+}
 }

@@ -5,11 +5,13 @@ require('dotenv').config();
 
 const app=express();
 const vecinoRoutes = require('./routes/vecinoRoutes');
+const actaRoutes = require('./routes/actaRoutes');
 
 app.use(cors())
 app.use(express.json())
 app.options('*',cors())
 app.use('/api',vecinoRoutes)
+app.use('/api',actaRoutes)
 
 app.listen(process.env.PORT,()=>
 {
