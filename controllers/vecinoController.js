@@ -14,7 +14,7 @@ const createVecino =(req,res) =>{
     try {
         newVecino.save();
         res.status(202).json({
-            message: "vecino creado correctamente"
+            message: "Vecino creado correctamente"
         })
     }
     catch (error) {
@@ -32,8 +32,35 @@ const getVecinos = (req, res) => {
         return res.status(200).send(vecinos)
     })
 }
+const updateVecinos = (req, res) => {
+    const { id } = req.params;
+    vecino.findByIdAndUpdate(id, req.body, (err, vecinos) => {
+        if (err) {
+            return res.status(400).send({ message: "No se ha podido modificar el vecino" })
+        }
+        if (!vecino) {
+            return res.status(404).send({ message: "No se ha encontrado el vecino" })
+        }
+        return res.status(200).send(vecinos)
+    })
+}
+
+const deleteVecino = (req, res) => {
+    const { id } = req.params;
+    vecino.findByIdAndDelete(id, (err, vecinos) => {
+        if (err) {
+            return res.status(400).send({ message: "No se ha podido eliminar el vecino" })
+        }
+        if (!vecino) {
+            return res.status(404).send({ message: "No se ha encontrado el vecino" })
+        }
+        return res.status(200).send(vecinos)
+    })
+}
 
 module.exports={
     createVecino,
-    getVecinos
+    getVecinos,
+    updateVecinos,
+    deleteVecino
 }
