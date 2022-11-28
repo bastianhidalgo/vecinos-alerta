@@ -8,6 +8,10 @@ const createComentario =(req,res)=>{
         fecha,
         descripcion,
         origen
+<<<<<<< HEAD
+=======
+
+>>>>>>> fe2db6e8930ff1d0dfaff8830a99737230cfc159
 
     });
     try {

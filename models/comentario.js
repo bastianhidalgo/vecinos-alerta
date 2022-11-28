@@ -17,7 +17,11 @@ comentario:{
             require:true
         },
         origen:{
+<<<<<<< HEAD
             type: Schema.ObjectId,
+=======
+            type: Schema.ObjectID,
+>>>>>>> fe2db6e8930ff1d0dfaff8830a99737230cfc159
             ref: 'acta'
         },
     }
