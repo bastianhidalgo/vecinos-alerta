@@ -16,7 +16,7 @@ api.post('/comentario',comentarioController.createComentario);
 api.get('/comentario', comentarioController.getComentario);
 api.post('/acta',actaController.createActa);
 api.get('/acta', actaController.getActas);
-api.put('/acta', actaController.updateActa);
-api.delete('/acta', actaController.deleteActa);
+api.put('/acta/update/:id', actaController.updateActa);
+api.delete('/acta/delete/:id', actaController.deleteActa);
 
 module.exports=api;
