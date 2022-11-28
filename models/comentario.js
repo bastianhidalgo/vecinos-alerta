@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const acta = require('./acta');
 const Schema = mongoose.Schema;
 const ComentarioSchema = new Schema({
     
@@ -9,15 +10,18 @@ comentario:{
         },
         fecha:{
             type: Date,
-            require: true
+            require: true   
         },
         descripcion:{
             type: String,
             require:true
-        }
-
-
+        },
+        origen:{
+            type: Schema.ObjectID,
+            ref: 'acta'
+        },
     }
 })
 
 module.exports=mongoose.model('comentario', ComentarioSchema);
+

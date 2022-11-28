@@ -13,9 +13,12 @@ api.put('/vecino/update/:id',vecinoController.updateVecinos);
 api.delete('/vecinos/delete/:id', vecinoController.deleteVecino);
 api.put('/asignarRol/:id', asignarRolController.asignarRol);
 api.post('/comentario',comentarioController.createComentario);
-api.get('/comentario', comentarioController.getComentario);
+api.get('/comentarios', comentarioController.getComentario);
+api.delete('/comentario/delete/:id', comentarioController.deleteComentario);
+api.put('/comentario/update/:id', comentarioController.updateComentario);
+api.get('/comentario/fin/:id', comentarioController.getActaComent);
 api.post('/acta',actaController.createActa);
-api.get('/acta', actaController.getActas);
+api.get('/actas', actaController.getActas);
 api.put('/acta/update/:id', actaController.updateActa);
 api.delete('/acta/delete/:id', actaController.deleteActa);
 

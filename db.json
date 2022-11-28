@@ -58,6 +58,10 @@
     "descripcion":{
         "type":"String",
         "require":true
+    },
+    "origen":{
+        "type":"Schema.ObjectID", 
+        "ref": "acta"
     }
 },
 
