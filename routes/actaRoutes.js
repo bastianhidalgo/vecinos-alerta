@@ -5,4 +5,6 @@ const api= express.Router();
 
 api.post('/acta',actaController.createActa);
 api.get('/acta', actaController.getActas);
+api.get('/acta', actaController.updateActa);
+api.get('/acta', actaController.deleteActa);
 module.exports=api;

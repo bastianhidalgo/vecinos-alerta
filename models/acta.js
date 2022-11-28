@@ -4,26 +4,21 @@ const ActaSchema = new Schema({
     tema:{
         type:String,
         required:true,
+        match: /^[a-zA-Z0-9]+$/,
 
     },
     descripcion:{
         type:String,
         required:true,
+        match: /^[a-zA-Z0-9]+$/,
     },
     fecha:{
         type:Date,
         required:true,
     },
-    hora_inicio:{
-        type: Date,
-        required:true,
-    },
-    hora_termino:{
+    fecha_termino:{
         type:Date,
-        required:true,
+        required:true
     }
-
-
-
 })
 module.exports=mongoose.model('acta', ActaSchema);
