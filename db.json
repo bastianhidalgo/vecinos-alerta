@@ -40,13 +40,9 @@
         "type":"Date",
         "required":true
     },
-    "hora_inicio":{
-        "type": "Date",
-        "required":true
-    },
-    "hora_termino":{
+    "fecha_termino":{
         "type":"Date",
-        "required":true
+        "required": true
     }
 },
 "comentario":{
@@ -63,5 +59,4 @@
         "require":true
     }
 }
-
 }
