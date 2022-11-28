@@ -24,6 +24,10 @@ const VecinoSchema = new Schema({
     correo:{
         type: String,
         required:true
+    },
+    rol:{
+        type: String,
+        required: true
     }
 })
 

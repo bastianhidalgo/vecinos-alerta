@@ -9,7 +9,8 @@ const createVecino =(req,res) =>{
         fechaNacimiento,
         direccion,
         telefono,
-        correo
+        correo,
+        rol:'vecino'
     });
     try {
         newVecino.save();
