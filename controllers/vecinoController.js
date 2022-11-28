@@ -10,7 +10,9 @@ const createVecino =(req,res) =>{
         direccion,
         telefono,
         correo,
-        rol:'vecino'
+        rol:'vecino',
+        fecha_inicio_rol: '2022/11/28',
+        fecha_termino_rol: '2023/11/28'
     });
     try {
         newVecino.save();

@@ -28,6 +28,14 @@ const VecinoSchema = new Schema({
     rol:{
         type: String,
         required: true
+    },
+    fecha_inicio_rol:{
+        type: Date,
+        required:true
+    },
+    fecha_termino_rol:{
+        type: Date,
+        required:true
     }
 })
 
