@@ -4,7 +4,6 @@ const createComentario =(req,res)=>{
     const {autor,fecha,descripcion}=req.body;
 
     const newComentario= new comentario({
-        
         autor,
         fecha,
         descripcion
