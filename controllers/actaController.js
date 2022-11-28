@@ -1,5 +1,5 @@
 const acta= require("../models/acta");
-const acta= require("../models/vecino");
+const vecino= require("../models/vecino");
 
 const createActa =(req,res)=>{
     const {tema,descripcion,fecha,fecha_termino}=req.body;

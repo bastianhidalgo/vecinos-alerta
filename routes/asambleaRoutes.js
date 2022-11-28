@@ -1,4 +1,4 @@
-const asambleaController = require('../controllers/asamController');
+const asambleaController = require('../controllers/asambleaController');
 const express = require('express');
 const api= express.Router();
 

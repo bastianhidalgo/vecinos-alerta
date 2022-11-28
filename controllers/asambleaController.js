@@ -1,4 +1,4 @@
-const asamblea=require('../models/');
+const asamblea=require('../models/asamblea');
 
 const createAsamblea =(req,res) =>{
     const {sede,direccion,tema,descripcion,fecha,hora_inicio}=req.body;

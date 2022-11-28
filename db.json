@@ -45,6 +45,7 @@
         "required": true
     }
 },
+
 "comentario":{
     "autor":{
         "type":"String",
@@ -57,6 +58,37 @@
     "descripcion":{
         "type":"String",
         "require":true
+    },
+    "origen":{
+        "type":"Schema.ObjectID", 
+        "ref": "acta"
     }
-}
+},
+
+  "Asamblea":{
+        "sede":{
+            "type":"String",
+            "required":true
+        },
+        "direccion":{
+            "type":"String",
+            "required":false
+        },
+        "tema":{
+            "type":"String",
+            "required":true
+        },
+        "descripcion":{
+            "type":"String",
+            "required":true
+        },
+        "fecha":{
+            "type":"Date",
+            "required":true
+        },
+        "hora_inicio":{
+            "type": "Date",
+            "required":true
+        }
+    }
 }
