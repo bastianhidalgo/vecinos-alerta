@@ -6,8 +6,7 @@ const createActa =(req,res)=>{
         tema,
         descripcion,
         fecha,
-        hora_inicio,
-        hora_termino
+        fecha_termino
 
 
     });
