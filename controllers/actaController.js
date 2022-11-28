@@ -2,6 +2,9 @@ const acta= require("../models/acta");
 
 const createActa =(req,res)=>{
     const {tema,descripcion,fecha,fecha_termino}=req.body;
+    if(!rol == "secretario"){
+        return res.status(400).send({ message: "Permiso denegado"})
+    }
     const newActa= new acta({
         tema,
         descripcion,
