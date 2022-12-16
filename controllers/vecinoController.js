@@ -1,7 +1,7 @@
 const vecino=require('../models/vecino');
 
 const createVecino =(req,res) =>{
-    const {nombre,apellido,fechaNacimiento,direccion,telefono,correo}=req.body;
+    const {nombre,apellido,fechaNacimiento,direccion,telefono,correo,fecha_inicio_rol,fecha_termino_rol}=req.body;
 
     const newVecino =new vecino({
         nombre,
@@ -11,14 +11,20 @@ const createVecino =(req,res) =>{
         telefono,
         correo,
         rol:'vecino',
-        fecha_inicio_rol: '2022/11/28',
-        fecha_termino_rol: '2023/11/28'
+        fecha_inicio_rol,
+        fecha_termino_rol
     });
     try {
         newVecino.save();
         res.status(202).json({
             message: "Vecino creado correctamente"
         })
+        
+          if ((req.body.fecha_inicio_rol) > (req.body.fecha_termino_rol)) {
+            return res.status(406).json({
+              message: 'fecha de termino no puede ser antes de la fecha de inicio'
+            });
+          }
     }
     catch (error) {
         res.status(400).json({

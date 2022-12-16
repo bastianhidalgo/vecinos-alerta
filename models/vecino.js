@@ -3,11 +3,13 @@ const Schema = mongoose.Schema;
 const VecinoSchema = new Schema({
     nombre:{
         type: String,
-        required:true
+        required:true,
+        match: /^[a-zA-Z]+$/
     },
     apellido:{
         type: String,
-        required:true
+        required:true,
+        match: /^[a-zA-Z]+$/
     },
     fechaNacimiento:{
         type: Date,
@@ -19,11 +21,13 @@ const VecinoSchema = new Schema({
     },
     telefono:{
         type: Number,
-        required:true
+        required:true,
+        match: /^[0-9-+]+$/
     },
     correo:{
         type: String,
-        required:true
+        required:true,
+       match: /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i
     },
     rol:{
         type: String,
