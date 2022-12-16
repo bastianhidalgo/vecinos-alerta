@@ -15,16 +15,17 @@ const createVecino =(req,res) =>{
         fecha_termino_rol
     });
     try {
+        if ((req.body.fecha_inicio_rol) > (req.body.fecha_termino_rol)) {
+            return res.status(406).json({
+              message: 'fecha de termino no puede ser antes de la fecha de inicio'
+            });
+          }
         newVecino.save();
         res.status(202).json({
             message: "Vecino creado correctamente"
         })
         
-          if ((req.body.fecha_inicio_rol) > (req.body.fecha_termino_rol)) {
-            return res.status(406).json({
-              message: 'fecha de termino no puede ser antes de la fecha de inicio'
-            });
-          }
+          
     }
     catch (error) {
         res.status(400).json({

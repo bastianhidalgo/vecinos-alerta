@@ -3,14 +3,7 @@ const vecino=require('../models/vecino');
 
 const asignarRol = async (req, res) => {
     try {
-      const asignarRol = await vecino.findByIdAndUpdate(req.params.id, {
-        rol: req.body.rol,
-        fecha_inicio_rol: req.body.fecha_inicio_rol,
-        fecha_termino_rol: req.body.fecha_termino_rol
-        
-      }, {
-        new: true
-      });
+      
       
       if ((req.body.fecha_inicio_rol) > (req.body.fecha_termino_rol)) {
         return res.status(406).json({
@@ -27,7 +20,14 @@ const asignarRol = async (req, res) => {
       if (req.body.rol=="administrador"
       ||req.body.rol=="secretario"||
       req.body.rol=="vecino") {
-        
+        const asignarRol = await vecino.findByIdAndUpdate(req.params.id, {
+          rol: req.body.rol,
+          fecha_inicio_rol: req.body.fecha_inicio_rol,
+          fecha_termino_rol: req.body.fecha_termino_rol
+          
+        }, {
+          new: true
+        });
         return res.json({
         message: 'La asignacion rol del vecino se ha realizado correctamente'
 
