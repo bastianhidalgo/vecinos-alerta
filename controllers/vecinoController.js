@@ -1,4 +1,5 @@
 const vecino=require('../models/vecino');
+const { useRegexCorreo,useRegexNombre,useRegexTelefono } = require('../utils/util');
 
 const createVecino =(req,res) =>{
     const {nombre,apellido,fechaNacimiento,direccion,telefono,correo,fecha_inicio_rol,fecha_termino_rol}=req.body;
@@ -20,6 +21,26 @@ const createVecino =(req,res) =>{
               message: 'fecha de termino no puede ser antes de la fecha de inicio'
             });
           }
+          if(!useRegexCorreo(req.body.correo)){
+            return res.status(406).json({
+                message: 'Correo invalido'
+          });
+        }
+        if(!useRegexNombre(req.body.nombre)){
+            return res.status(406).json({
+                message: 'nombre invalido'
+          });
+        }
+        if(!useRegexNombre(req.body.apellido)){
+            return res.status(406).json({
+                message: 'apellido invalido'
+          });
+        }
+        if(!useRegexTelefono(req.body.telefono)){
+            return res.status(406).json({
+                message: 'telefono invalido'
+          });
+        }
         newVecino.save();
         res.status(202).json({
             message: "Vecino creado correctamente"

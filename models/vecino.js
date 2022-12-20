@@ -4,12 +4,16 @@ const VecinoSchema = new Schema({
     nombre:{
         type: String,
         required:true,
-        match: /^[a-zA-Z]+$/
+        //match: /^[a-zA-Z]+$/,
+        minLenght:1,
+        maxLenght: 100
     },
     apellido:{
         type: String,
         required:true,
-        match: /^[a-zA-Z]+$/
+        //match: /^[a-zA-Z]+$/,
+        minLenght:1,
+        maxLenght: 100
     },
     fechaNacimiento:{
         type: Date,
@@ -20,9 +24,9 @@ const VecinoSchema = new Schema({
         required:true
     },
     telefono:{
-        type: Number,
+        type: String,
         required:true,
-        match: /^[0-9-+]+$/
+        //match: /^[0-9-+]+$/
     },
     correo:{
         type: String,

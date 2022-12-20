@@ -15,7 +15,7 @@ app.use('/api',vecinoRoutes)
 
 app.listen(process.env.PORT,()=>
 {
-    console.log('el proyecto esta corriendo en el puerto ',process.env.PORT);
+    console.log('el proyecto esta corriendo en el puerto',process.env.PORT);
 });
 
 mongoose.set('useFindAndModify',false),
