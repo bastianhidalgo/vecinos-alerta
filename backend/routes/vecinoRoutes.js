@@ -1,6 +1,6 @@
 const comentarioController = require('../controllers/comentarioController');
 const vecinoController = require('../controllers/vecinoController');
-const actaController = require('../controllers/actaController');
+const pdfController = require('../controllers/pdfController');
 const asignarRolController = require('../controllers/asignarRolController');
 const asambleaController = require('../controllers/asambleaController');
 const express = require('express');
@@ -20,10 +20,10 @@ api.delete('/comentario/delete/:id', comentarioController.deleteComentario);
 api.put('/comentario/update/:id', comentarioController.updateComentario);
 api.get('/comentario/fin/:id', comentarioController.getActaComent);
 //rutas andres
-api.post('/acta',actaController.createActa);
-api.get('/actas', actaController.getActas);
-api.put('/acta/update/:id', actaController.updateActa);
-api.delete('/acta/delete/:id', actaController.deleteActa);
+api.post('/acta',pdfController.create);
+api.get('/actas', pdfController.get);
+api.put('/acta/update/:id', pdfController.update);
+api.delete('/acta/delete/:id', pdfController.remove);
 //rutas alexander
 api.post('/asamblea',asambleaController.createAsamblea);
 api.get('/asambleas', asambleaController.getAsambleas);

@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
+const upload = require("./middlewares/upload");
 
 const app=express();
 const vecinoRoutes = require('./routes/vecinoRoutes');
