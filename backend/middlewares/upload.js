@@ -7,7 +7,7 @@ const upload = multer({
   },
   fileFilter(req, file, cb) {
     if (!file.originalname.match(/\.(pdf)$/)) {
-      return cb(new Error('Please upload a PDF'));
+      return cb(new Error('Por favor, solo PDF'));
     }
 
     cb(undefined, true);

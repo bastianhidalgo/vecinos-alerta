@@ -7,4 +7,4 @@ const pdfSchema = new Schema({
     file: { type: Buffer, required: true }
 });
 
-const PDF = mongoose.model('Pdf', pdfSchema);
+module.exports=mongoose.model('acta', pdfSchema);
