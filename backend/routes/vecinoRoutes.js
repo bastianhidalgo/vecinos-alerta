@@ -27,5 +27,6 @@ api.delete('/acta/delete/:id', pdfController.remove);
 //rutas alexander
 api.post('/asamblea',asambleaController.createAsamblea);
 api.get('/asambleas', asambleaController.getAsambleas);
-
+api.put("/asamblea/update/:id",asambleaController.updateAsamblea);
+api.delete('/asamblea/delete/:id',asambleaController.deleteAsamblea);
 module.exports=api;
