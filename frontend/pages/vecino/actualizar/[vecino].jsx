@@ -1,6 +1,6 @@
 import {useState} from 'react'
-import {getVecino, updateVecino} from '../../data/vecinos'
-import InputForm from '../../components/InputForm'
+import {getVecino, updateVecino} from '../../../data/vecinos'
+import InputForm from '../../../components/InputForm'
 import {Button, Container, Heading, HStack, Stack} from '@chakra-ui/react'
 import { useRouter} from 'next/router'
 import Swal from 'sweetalert2'

@@ -33,9 +33,14 @@ const index = () => {
             <Td>{vecino.telefono}</Td>
             <Td>{vecino.correo}</Td>
             <Td>{vecino.rol}</Td>
-            <Td><Button colorScheme="green" onClick={()=>router.push(`./vecino/${vecino._id}`)} mt="4" >Modificar</Button></Td>
-            <Td><Button colorScheme="red" mt="4" >Eliminar</Button></Td>
-
+            
+            <Td>
+              <HStack>
+            <Button colorScheme="green" onClick={()=>router.push(`./vecino/actualizar/${vecino._id}`)} >Modificar</Button>
+            <Button colorScheme="orange" onClick={()=>router.push(`./vecino/ver/${vecino._id}`)}>Ver</Button>
+            </HStack>
+            </Td>
+            
 
           </Tr>
         )
@@ -57,14 +62,14 @@ const index = () => {
           <Table variant="simple">
             <Thead>
               <Tr>
-                <Td>Nombre</Td>
-                <Td>Apellido</Td>
-                <Td>Fecha Nacimiento</Td>
-                <Td>Dirección</Td>
-                <Td>Teléfono</Td>
-                <Td>Correo</Td>
-                <Td>Rol</Td>
-                <Td>Modificar/Eliminar</Td>
+                <Td fontWeight={"bold"}>Nombre</Td>
+                <Td fontWeight={"bold"}>Apellido</Td>
+                <Td fontWeight={"bold"}>Fecha Nacimiento</Td>
+                <Td fontWeight={"bold"}>Dirección</Td>
+                <Td fontWeight={"bold"}>Teléfono</Td>
+                <Td fontWeight={"bold"}>Correo</Td>
+                <Td fontWeight={"bold"}>Rol</Td>
+                <Td fontWeight={"bold"}>Modificar/Eliminar</Td>
   
               </Tr>
             </Thead>

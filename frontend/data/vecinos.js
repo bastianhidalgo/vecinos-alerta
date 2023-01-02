@@ -11,7 +11,6 @@ const createVecino =  (vecino) => {
     return response
 }
 const getVecino= async (id) => {
-    console.log(id)
     const response = await axios.get(`${process.env.SERVIDOR}/vecinos/search/${id}`)
     return response
 }
@@ -21,6 +20,10 @@ const updateVecino = (id, vecino) => {
     return response
 }
 
+const AsignarRol = (id, vecino) => {
+    const response =  axios.put(`${process.env.SERVIDOR}/asignarRol/${id}`,vecino)
+    return response
+}
 module.exports = {
     getVecinos,
     createVecino,
