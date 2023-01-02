@@ -11,7 +11,7 @@ const api= express.Router();
 api.post('/vecino',vecinoController.createVecino);
 api.get('/vecinos', vecinoController.getVecinos);
 api.get('/vecinos/search/:id', vecinoController.getVecino);
-api.put('/vecino/update/:id',vecinoController.updateVecinos);
+api.put('/vecino/update/:id',vecinoController.updateVecino);
 api.delete('/vecinos/delete/:id', vecinoController.deleteVecino);
 api.put('/asignarRol/:id', asignarRolController.asignarRol);
 //rutas camilo

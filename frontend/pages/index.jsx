@@ -4,6 +4,7 @@ import axios from 'axios'
 import {getVecinos} from '../data/vecinos'
 import { useRouter } from 'next/router'
 
+
 const index = () => {
   console.log(process.env.SERVIDOR)
     const [vecinos, setVecinos]= useState([{

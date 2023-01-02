@@ -3,6 +3,7 @@ import { Button,Container,Heading,HStack, Stack} from '@chakra-ui/react'
 import {createVecino} from '../data/vecinos'
 import InputForm from '../components/InputForm'
 import { useRouter } from "next/router";
+import Swal from 'sweetalert2'
 
 const vecinos = () =>{
 
@@ -24,13 +25,20 @@ const vecinos = () =>{
             [e.target.name]: e.target.value
         })
     }
-    const submitVecino = (e) =>{
+    const submitVecino = async(e) =>{
         e.preventDefault()
-        createVecino(vecino).then(res =>{
-        console.log(res.data.nombre)
-        })
-       
-    } 
+        const response = await createVecino(vecino)
+
+            Swal.fire({
+                icon:'success',
+                title:'Vecino agregado',
+                showConfirmButton: true,
+                text: 'El vecino se agregó correctamente'
+            })
+            router.push('/')
+        
+
+    }
 
     const router = useRouter()
     return (
@@ -43,8 +51,10 @@ const vecinos = () =>{
                 </HStack>
                 <InputForm label="Fecha Nacimiento" handleChange={handleChange} name="fechaNacimiento" placeholder="Fecha Nacimiento" type="date" value={vecino.fechaNacimiento}/>
                 <InputForm label="Dirección" handleChange={handleChange} name="direccion" placeholder="Dirección" type="text" value={vecino.direccion}/>
+                <HStack>
                 <InputForm label="Teléfono" handleChange={handleChange} name="telefono" placeholder="Teléfono" type="text" value={vecino.telefono}/>
                 <InputForm label="Correo" handleChange={handleChange} name="correo" placeholder="Correo" type="text" value={vecino.correo}/>
+                </HStack>
                 <HStack>
                 <InputForm label="Fecha inicio rol" handleChange={handleChange} name="fecha_inicio_rol" placeholder="Fecha inicio rol" type="date" value={vecino.fecha_inicio_rol}/>
                 <InputForm label="Fecha termino rol" handleChange={handleChange} name="fecha_termino_rol" placeholder="Fecha termino rol" type="date" value={vecino.fecha_termino_rol}/>

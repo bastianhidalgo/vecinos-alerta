@@ -43,7 +43,8 @@ const createVecino =(req,res) =>{
         }
         newVecino.save();
         res.status(202).json({
-            message: "Vecino creado correctamente"
+            message: "Vecino creado correctamente", vecino:newVecino,status:200
+
         })
 
 
@@ -63,7 +64,7 @@ const getVecinos = (req, res) => {
         return res.status(200).send(vecinos)
     })
 }
-const updateVecinos = (req, res) => {
+const updateVecino = (req, res) => {
     const { id } = req.params;
     vecino.findByIdAndUpdate(id, req.body, (err, vecinos) => {
         if (err) {
@@ -104,7 +105,7 @@ const getVecino = (req, res) => {
 module.exports={
     createVecino,
     getVecinos,
-    updateVecinos,
+    updateVecino,
     deleteVecino,
     getVecino
 }

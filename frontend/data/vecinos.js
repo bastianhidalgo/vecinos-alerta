@@ -11,6 +11,7 @@ const createVecino =  (vecino) => {
     return response
 }
 const getVecino= async (id) => {
+    console.log(id)
     const response = await axios.get(`${process.env.SERVIDOR}/vecinos/search/${id}`)
     return response
 }
