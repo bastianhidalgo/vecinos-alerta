@@ -10,6 +10,7 @@ const api= express.Router();
 //rutas bastian
 api.post('/vecino',vecinoController.createVecino);
 api.get('/vecinos', vecinoController.getVecinos);
+api.get('/vecinos/search/:id', vecinoController.getVecino);
 api.put('/vecino/update/:id',vecinoController.updateVecinos);
 api.delete('/vecinos/delete/:id', vecinoController.deleteVecino);
 api.put('/asignarRol/:id', asignarRolController.asignarRol);

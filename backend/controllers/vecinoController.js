@@ -45,8 +45,8 @@ const createVecino =(req,res) =>{
         res.status(202).json({
             message: "Vecino creado correctamente"
         })
-        
-          
+
+
     }
     catch (error) {
         res.status(400).json({
@@ -88,10 +88,23 @@ const deleteVecino = (req, res) => {
         return res.status(200).send(vecinos)
     })
 }
+const getVecino = (req, res) => {
+    const { id } = req.params;
+    vecino.findById(id, (err, vecinos) => {
+        if (err) {
+            return res.status(400).send({ message: 'Error al obtener el vecino' });
+        }
+        if (!vecino) {
+            return res.status(404).send({ message: 'No se encontró el vecino' });
+        }
+        return res.status(200).send(vecinos);
+    })
+}
 
 module.exports={
     createVecino,
     getVecinos,
     updateVecinos,
-    deleteVecino
+    deleteVecino,
+    getVecino
 }
