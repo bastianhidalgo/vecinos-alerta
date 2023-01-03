@@ -1,8 +1,8 @@
-import {useState} from 'react'
-import {getVecino, updateVecino} from '../../../data/vecinos'
+import { useState } from 'react'
+import { getVecino, updateVecino } from '../../../data/vecinos'
 import InputForm from '../../../components/InputForm'
-import {Button, Container, Heading, HStack, Stack} from '@chakra-ui/react'
-import { useRouter} from 'next/router'
+import { Button, Container, Heading, HStack, Stack } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
 import Swal from 'sweetalert2'
 
 export const getServerSideProps = async (context)=>{
@@ -17,7 +17,7 @@ export const getServerSideProps = async (context)=>{
 const editar =({ data }) => {
     const [vecino, setVecino] = useState(data)
     const router = useRouter()
-    const {id} = router.query
+    const { vecinoo } = router.query
 
     const handleChange=(e) =>{
         setVecino({
@@ -27,8 +27,7 @@ const editar =({ data }) => {
     }
     const submitVecino = async(e) =>{
         e.preventDefault()
-        const response = await updateVecino(id,vecino)
-
+        const response = await updateVecino(vecino._id,vecino)
             Swal.fire({
                 icon:'success',
                 title:'Vecino actualizado',
@@ -42,7 +41,7 @@ const editar =({ data }) => {
 
     return (
     <Container maxW="container.xl" mt={10}>
-    <Heading as={"h1"} size={"2xl"} textAlign="center">Editar Vecino</Heading>
+    <Heading as={"h1"} className="header" size={"2xl"} textAlign="center">Editar Vecino</Heading>
     <Stack spacing={4} mt={10}>
         <HStack>
         <InputForm label="Nombre" handleChange={handleChange} name="nombre" placeholder="Nombre" type="text" value={vecino.nombre}/>

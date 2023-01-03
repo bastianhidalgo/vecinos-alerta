@@ -28,7 +28,7 @@ const vecinos = () =>{
     const submitVecino = async(e) =>{
         e.preventDefault()
         const response = await createVecino(vecino)
-
+        
             Swal.fire({
                 icon:'success',
                 title:'Vecino agregado',
@@ -43,7 +43,7 @@ const vecinos = () =>{
     const router = useRouter()
     return (
         <Container maxW="container.xl" mt={10}>
-            <Heading as={"h1"} size={"2xl"} textAlign="center">Registrar Vecino</Heading>
+            <Heading as={"h1"} className="header" size={"2xl"} textAlign="center">Registrar Vecino</Heading>
             <Stack spacing={4} mt={10}>
                 <HStack>
                 <InputForm label="Nombre" handleChange={handleChange} name="nombre" placeholder="Nombre" type="text" value={vecino.nombre}/>
