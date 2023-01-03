@@ -4,7 +4,7 @@ import axios from 'axios'
 import {getVecinos} from '../data/vecinos'
 import { useRouter } from 'next/router'
 
-const index = () => {
+const Index = () => {
   console.log(process.env.SERVIDOR)
     const [vecinos, setVecinos]= useState([{
       id:'',
@@ -82,4 +82,4 @@ const index = () => {
     </>
     )
     }
-export default index
+export default Index

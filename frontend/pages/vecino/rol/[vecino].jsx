@@ -14,7 +14,7 @@ export const getServerSideProps = async (context)=>{
         }
     }
 
-const cambiarRol = ({ data }) =>{
+const CambiarRol = ({ data }) =>{
     const [vecino, setVecino] = useState(data)
     const router = useRouter()
     const { vecinos } = router.query
@@ -56,4 +56,4 @@ const cambiarRol = ({ data }) =>{
         </Container>
     )}
 
-    export default cambiarRol
+    export default CambiarRol

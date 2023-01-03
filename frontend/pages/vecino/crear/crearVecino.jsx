@@ -5,7 +5,7 @@ import InputForm from '../../../components/InputForm'
 import { useRouter } from "next/router";
 import Swal from 'sweetalert2'
 
-const vecinos = () =>{
+const Vecinos = () =>{
 
     const [vecino,setVecino]= useState({
 
@@ -67,4 +67,4 @@ const vecinos = () =>{
         </Container>
     )
 }
-export default vecinos
+export default Vecinos

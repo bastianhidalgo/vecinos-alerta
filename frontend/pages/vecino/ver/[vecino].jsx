@@ -12,7 +12,7 @@ export const getServerSideProps= async(context) => {
     }
 }
 
-const editar =  ({ data }) => {
+const Editar =  ({ data }) => {
     const [vecino]=useState(data)
     const router = useRouter()
     const {vecinoo} = router.query
@@ -90,4 +90,4 @@ const editar =  ({ data }) => {
 
 
 }
-export default editar
+export default Editar
