@@ -13,16 +13,17 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "axios": "^1.2.0",
+    "bootstrap": "^5.2.3",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.3",
     "formik": "2.2.9",
     "framer-motion": "^7.6.19",
     "js-cookie": "^3.0.1",
     "next": "^13.0.6",
+    "node": "^19.3.0",
+    "nodemon": "^2.0.20",
     "react": "^18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.41.5",
-    "sweetalert2": "^11.6.16",
-    "yup": "^0.32.11"
+    "sweetalert2": "^11.6.16"
   }
 }

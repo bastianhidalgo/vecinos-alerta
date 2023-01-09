@@ -14,8 +14,8 @@ return (
 <Container textAlign="center" maxW="container.xl">
         <Heading as="h1" size="2xl" className="header" textAlign="center" mt="10">Listado de vecinos</Heading>
         <HStack marginTop={"40px"}>
-        <Button colorScheme="blue"textAlign="center"  onClick={() => router.push('./vecino/listado/listado')}>Funcionalidad Bastian</Button>
-        <Button colorScheme="blue"textAlign="center"  onClick={() => router.push('./asamblea/listado')}>Funcionalidad Alexander Y Camilo</Button>
+        <Button colorScheme="blue"textAlign="center"  onClick={() => router.push('./listado')}>Funcionalidad Bastian</Button>
+        <Button colorScheme="blue"textAlign="center"  onClick={() => router.push('./asamblea')}>Funcionalidad Alexander Y Camilo</Button>
         </HStack>
         </Container>
         </>

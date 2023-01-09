@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import { Button,Container,Heading,HStack,Input,Stack,Table,Th,Tr,Td,Thead,Tbody } from '@chakra-ui/react'
 import axios from 'axios'
-import {getVecinos} from '../../../data/vecinos'
+import {getVecinos} from '../data/vecinos'
 import { useRouter } from 'next/router'
 
-const Listado = () => {
+const Index = () => {
   console.log(process.env.SERVIDOR)
     const [vecinos, setVecinos]= useState([{
       id:'',
@@ -38,8 +38,8 @@ const Listado = () => {
 
             <Td>
               <HStack>
-            <Button colorScheme="green" onClick={()=>router.push(`../actualizar/${vecino._id}`)} >Modificar</Button>
-            <Button colorScheme="orange" onClick={()=>router.push(`../ver/${vecino._id}`)}>Ver</Button>
+            <Button colorScheme="green" onClick={()=>router.push(`./vecino/actualizar/${vecino._id}`)} >Modificar</Button>
+            <Button colorScheme="orange" onClick={()=>router.push(`./vecino/ver/${vecino._id}`)}>Ver</Button>
             </HStack>
             </Td>
 
@@ -59,7 +59,7 @@ const Listado = () => {
     <>
       <Container maxW="container.xl">
         <Heading as="h1" size="2xl" className="header" textAlign="center" mt="10">Listado de vecinos</Heading>
-        <Button colorScheme="blue" mt="10" onClick={() => router.push('../crear/crearVecino')}>Agregar Vecino</Button>
+        <Button colorScheme="blue" mt="10" onClick={() => router.push('./crearVecino')}>Agregar Vecino</Button>
         <Stack spacing={4} mt="10">
           <Table variant="simple">
             <Thead>
@@ -82,4 +82,4 @@ const Listado = () => {
     </>
     )
     }
-export default Listado
+export default Index
