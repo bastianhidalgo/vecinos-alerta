@@ -6,20 +6,16 @@ const ComentarioSchema = new Schema({
 comentario:{
         autor:{
             type:String,
-            required:true
+            required:false
         },
         fecha:{
             type: Date,
-            require: true   
+            require: false   
         },
         descripcion:{
             type: String,
-            require:true
-        },
-        origen:{
-            type: Schema.ObjectId,
-            ref: 'acta'
-        },
+            require:false
+        }
     }
 })
 
